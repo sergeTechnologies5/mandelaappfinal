@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ContactAdmin">
+
+
+    <LinearLayout
+
+        android:layout_margin="5px"
+        android:padding="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:padding="24px"
+            android:layout_margin="24dp"
+            android:background="@color/colorPrimary"
+            android:id="@+id/saving"
+            android:layout_width="match_parent"
+            android:text="Write a Comment About The Group"
+            android:layout_height="wrap_content" />
+        <EditText
+            android:inputType="textAutoComplete"
+            android:background="@color/colorPrimary"
+            android:padding="24px"
+            android:hint="Enter Comments"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <Button
+            android:layout_margin="24px"
+            android:padding="24px"
+            android:text="Comment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+
+</FrameLayout>

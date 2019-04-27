@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:iconTint="@color/colorPrimaryDark"
+            android:id="@+id/home"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Home" />
+        <item
+            android:iconTint="@color/colorPrimaryDark"
+            android:id="@+id/save"
+            android:icon="@drawable/bitcon"
+            android:title="Save" />
+
+        <item
+            android:id="@+id/accounts"
+            android:icon="@drawable/bgapp"
+            android:title="Account" />
+
+        <item
+            android:id="@+id/withdraw"
+            android:icon="@drawable/bgapp"
+            android:title="WithDraw" />
+
+    </group>
+
+    <item android:title="Communicate">
+        <menu>
+            <item
+                android:id="@+id/contact_admin"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Comment" />
+            <item
+                android:id="@+id/checkout"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Check Out" />
+        </menu>
+    </item>
+
+</menu>
