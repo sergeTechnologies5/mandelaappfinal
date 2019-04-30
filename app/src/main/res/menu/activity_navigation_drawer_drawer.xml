@@ -19,7 +19,7 @@
         <item
             android:id="@+id/accounts"
             android:icon="@drawable/bgapp"
-            android:title="Account" />
+            android:title="Request Loan " />
 
         <item
             android:id="@+id/withdraw"
