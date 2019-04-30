@@ -42,7 +42,7 @@
     <string name="withdrawfrag">Withdraw</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="accounts">Accounts</string>
+    <string name="accounts">Loan Request</string>
     <string-array name="countries_array">
         <item>China</item>
         <item>India</item>

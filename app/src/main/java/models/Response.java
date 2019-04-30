@@ -3,8 +3,10 @@ package models;
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
+import com.google.gson.annotations.SerializedName;
+
 @Entity(tableName = "payments_table")
-public class PaymentResponse {
+public class Response {
 
     @PrimaryKey(autoGenerate = true)
     int id;
@@ -17,10 +19,12 @@ public class PaymentResponse {
         this.id = id;
     }
 
+    @SerializedName("message")
     String message;
+    @SerializedName("status")
     String status;
 
-    public PaymentResponse(String message, String status) {
+    public Response(String message, String status) {
         this.message = message;
         this.status = status;
     }

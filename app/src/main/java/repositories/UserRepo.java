@@ -10,13 +10,14 @@ import java.util.List;
 
 import database.Db;
 import interfaces.UserDao;
-import models.PaymentResponse;
+
+import models.Response;
 import models.User;
 import retrofit.ApiClient;
 import retrofit.ApiService;
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
+
 
 public class UserRepo {
     private UserDao noteDao;
@@ -48,15 +49,16 @@ public class UserRepo {
     }
 
     public void createAccount(User user){
-        Call<PaymentResponse> call = apiInterface.createAccount(user);
-        call.enqueue(new Callback<PaymentResponse>() {
+        Call<Response> call = apiInterface.createAccount(user);
+        call.enqueue(new Callback<Response>() {
+
             @Override
-            public void onResponse(Call<PaymentResponse> call, Response<PaymentResponse> response) {
-               // heroList.setValue(response.body());
+            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
                 Toast.makeText(application, response.message(),Toast.LENGTH_LONG).show();
             }
+
             @Override
-            public void onFailure(Call<PaymentResponse> call, Throwable t) {
+            public void onFailure(Call<Response> call, Throwable t) {
                Toast.makeText(application, t.getMessage(),Toast.LENGTH_LONG).show();
             }
 

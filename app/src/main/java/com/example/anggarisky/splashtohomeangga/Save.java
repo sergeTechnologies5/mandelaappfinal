@@ -1,6 +1,5 @@
 package com.example.anggarisky.splashtohomeangga;
 
-import android.arch.lifecycle.ViewModelProviders;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -8,24 +7,18 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import models.Payment;
-import models.PaymentResponse;
+import models.Response;
 import models.User;
 import retrofit.ApiClient;
 import retrofit.ApiService;
 import retrofit2.Call;
 import retrofit2.Callback;
-import retrofit2.Response;
 
 
 public class Save extends Fragment {
@@ -56,15 +49,17 @@ public class Save extends Fragment {
                     @Override
                     public void onClick(View v) {
                         amountfee = amount.getText().toString();
-                        Call<PaymentResponse> call = apiInterface.payForservices( new Payment(user.getId(),user.getGroup_id(),user.getPhonenumber(),amountfee));
-                        call.enqueue(new Callback<PaymentResponse>() {
-                            @Override
-                            public void onResponse(Call<PaymentResponse> call, Response<PaymentResponse> response) {
+                        Call<Response> call = apiInterface.payForservices( new Payment(user.getId(),user.getGroup_id(),user.getPhonenumber(),amountfee));
+                        call.enqueue(new Callback<Response>() {
 
-                                Toast.makeText(getContext(), response.message(),Toast.LENGTH_LONG).show();
-                            }
+
                             @Override
-                            public void onFailure(Call<PaymentResponse> call, Throwable t) {
+                            public void onResponse(Call<Response> call, retrofit2.Response<Response> response) {
+
+                            }
+
+                            @Override
+                            public void onFailure(Call<Response> call, Throwable t) {
                                 // Toast.makeText(getApplication(), t.getMessage(),Toast.LENGTH_LONG).show();
                             }
 
